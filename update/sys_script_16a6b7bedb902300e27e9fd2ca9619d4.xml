@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_271170_budget_ma_kunde</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Änderung Budget</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var date = new GlideDateTime();
+	var month_begin =  new GlideDateTime();
+	var month_end = new GlideDateTime();
+	var date_day =  date.getDayOfMonthUTC();
+	var date_days = date.getDaysInMonthUTC();
+	
+	month_begin.addDaysUTC(-date_day+1);
+	month_end.addDaysUTC(date_days-date_day);
+	
+	var startTime = month_begin.getValue().split(' ')[0] + ' 00:00:00';
+	var endTime = month_end.getValue().split(' ')[0] + ' 23:59:59';
+	month_begin.setValue(startTime);
+	month_end.setValue(endTime);
+	
+	var gt_einkauf = new GlideRecord('x_271170_budget_ma_einkauf');
+	gt_einkauf.addQuery('u_datum', '<=', month_end);
+	gt_einkauf.addQuery('u_datum', '>=', month_begin);
+	gt_einkauf.addQuery('u_kunde',current.getValue('u_kunde'));
+	gt_einkauf.query();
+	
+	var balance = 0;
+	while(gt_einkauf.next()){
+		balance += parseFloat(gt_einkauf.getValue('u_kosten'));
+	}
+	
+	
+	balance = current.u_budget - balance;
+	
+	current.setValue('u_balance',balance);
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>Maksim</sys_created_by>
+        <sys_created_on>2018-09-06 11:53:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>16a6b7bedb902300e27e9fd2ca9619d4</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Änderung Budget</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sys_script_16a6b7bedb902300e27e9fd2ca9619d4</sys_update_name>
+        <sys_updated_by>Maksim</sys_updated_by>
+        <sys_updated_on>2018-09-06 12:10:16</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=16a6b7bedb902300e27e9fd2ca9619d4"/>
+</record_update>
