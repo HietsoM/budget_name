@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">31512cc7dbd023009b641fc7689619d4</sp_column>
+        <sp_widget display_value="DiagrammTest2">c465e44bdbd023009b641fc76896192a</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>Thomas.Sommer</sys_created_by>
+        <sys_created_on>2018-09-06 15:53:09</sys_created_on>
+        <sys_id>f6ad284fdbd023009b641fc7689619fb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sp_instance_f6ad284fdbd023009b641fc7689619fb</sys_update_name>
+        <sys_updated_by>Thomas.Sommer</sys_updated_by>
+        <sys_updated_on>2018-09-06 16:05:26</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=f6ad284fdbd023009b641fc7689619fb"/>
+</record_update>

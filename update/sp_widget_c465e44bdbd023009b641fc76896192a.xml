@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[var labelType, useGradients, nativeTextSupport, animate;
+function() {
+  /* widget controller */
+  var c = this;
+	
+	
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>diagrammtest2</id>
+        <internal>false</internal>
+        <link/>
+        <name>DiagrammTest2</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	var data = new GlideRecord('x_271170_budget_ma_kunde');
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Thomas.Sommer</sys_created_by>
+        <sys_created_on>2018-09-06 15:16:56</sys_created_on>
+        <sys_id>c465e44bdbd023009b641fc76896192a</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>DiagrammTest2</sys_name>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sp_widget_c465e44bdbd023009b641fc76896192a</sys_update_name>
+        <sys_updated_by>Thomas.Sommer</sys_updated_by>
+        <sys_updated_on>2018-09-06 16:21:18</sys_updated_on>
+        <template><![CDATA[<div>
+  
+ 
+</div>]]></template>
+    </sp_widget>
+</record_update>
