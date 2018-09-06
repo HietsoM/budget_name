@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="Ausgaben pro Kategorie" language="en" table="x_271170_budget_ma_ausgaben_pro_kategorie">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Ausgaben pro Kategorie</label>
+            <language>en</language>
+            <name>x_271170_budget_ma_ausgaben_pro_kategorie</name>
+            <plural>Ausgaben pro Kategories</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Frieder</sys_created_by>
+            <sys_created_on>2018-09-06 12:46:49</sys_created_on>
+            <sys_id>590308cfdb54a300b3762a9a4896195e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Ausgaben pro Kategorie</sys_name>
+            <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+            <sys_update_name>sys_documentation_x_271170_budget_ma_ausgaben_pro_kategorie__en</sys_update_name>
+            <sys_updated_by>Frieder</sys_updated_by>
+            <sys_updated_on>2018-09-06 12:46:49</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
