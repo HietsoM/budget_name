@@ -60,15 +60,15 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>Maksim</sys_created_by>
         <sys_created_on>2018-09-06 11:43:04</sys_created_on>
-        <sys_id>f4443b3edb902300e27e9fd2ca9619ee</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_id>b57bb73adb14a30066c67e7dbf961978</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Kunde</sys_name>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
         <sys_update_name>sys_dictionary_x_271170_budget_ma_kategorie_u_kunde</sys_update_name>
-        <sys_updated_by>Maksim</sys_updated_by>
-        <sys_updated_on>2018-09-06 11:48:57</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-09-06 12:13:50</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

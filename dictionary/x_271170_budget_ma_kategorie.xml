@@ -2,7 +2,7 @@
 <database>
     <element label="Kategorie" max_length="40" name="x_271170_budget_ma_kategorie" type="collection">
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;&#13;&#10;&#9;&#13;&#10;&#9;var user = new GlideRecord('x_271170_budget_ma_kunde');&#13;&#10;&#9;&#13;&#10;&#9;user.get('u_user',gs.getUserID());&#13;&#10;&#9;&#13;&#10;&#9;return user.sys_id;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Kunde" max_length="32" name="u_kunde" read_only="true" reference="x_271170_budget_ma_kunde" type="reference" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;&#10;&#9;&#10;&#9;var user = new GlideRecord('x_271170_budget_ma_kunde');&#10;&#9;&#10;&#9;user.get('u_user',gs.getUserID());&#10;&#9;&#10;&#9;return user.sys_id;  // return the calculated value&#10;&#10;})(current);" label="Kunde" max_length="32" name="u_kunde" read_only="true" reference="x_271170_budget_ma_kunde" type="reference" virtual="true"/>
         <element label="Name" mandatory="true" max_length="255" name="u_name" type="string_full_utf8"/>
         <index name="index">
             <element name="u_kunde"/>
