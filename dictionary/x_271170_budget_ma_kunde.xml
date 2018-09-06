@@ -3,7 +3,7 @@
     <element label="Kunde" max_length="40" name="x_271170_budget_ma_kunde" type="collection">
         <element label="balance" max_length="20" name="u_balance" read_only="true" type="currency"/>
         <element label="Budget" mandatory="true" max_length="20" name="u_budget" type="currency"/>
-        <element default="javascript:gs.getUserID();" display="true" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="User" mandatory="true" max_length="32" name="u_user" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element default="javascript:gs.getUserID();" display="true" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="User" mandatory="true" max_length="32" name="u_user" read_only="true" reference="sys_user" type="reference" unique="true" use_dynamic_default="true"/>
         <index name="index">
             <element name="u_user"/>
         </index>
