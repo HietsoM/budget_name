@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Zusatzeinkommen" max_length="40" name="x_271170_budget_ma_zusatzeinkommen" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Geld" mandatory="true" max_length="20" name="u_geld" type="currency"/>
+        <element label="Kategorie" mandatory="true" max_length="32" name="u_kategorie" reference="x_271170_budget_ma_kategorie" type="reference"/>
+        <element label="Kunde" mandatory="true" max_length="32" name="u_kunde" reference="x_271170_budget_ma_kunde" type="reference"/>
+        <index name="index">
+            <element name="u_kategorie"/>
+        </index>
+        <index name="index2">
+            <element name="u_kunde"/>
+        </index>
+    </element>
+</database>

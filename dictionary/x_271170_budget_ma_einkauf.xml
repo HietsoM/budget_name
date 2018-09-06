@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Einkauf" max_length="40" name="x_271170_budget_ma_einkauf" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="javascript:gs.now()" dynamic_default_value="fb7553e85f220100a9ad2572f2b477b4" label="Datum" mandatory="true" max_length="40" name="u_datum" type="glide_date" use_dynamic_default="true"/>
+        <element label="Kategorie" mandatory="true" max_length="32" name="u_kategorie" reference="x_271170_budget_ma_kategorie" type="reference"/>
+        <element label="Kosten" mandatory="true" max_length="20" name="u_kosten" type="currency"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;&#13;&#10;&#9;&#13;&#10;&#9;var user = new GlideRecord('x_271170_budget_ma_kunde');&#13;&#10;&#9;&#13;&#10;&#9;user.get('u_user',gs.getUserID());&#13;&#10;&#9;&#13;&#10;&#9;return user.sys_id;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" default="javascript:" label="Kunde" mandatory="true" max_length="32" name="u_kunde" read_only="true" reference="x_271170_budget_ma_kunde" type="reference" virtual="true"/>
+        <index name="index">
+            <element name="u_kategorie"/>
+        </index>
+        <index name="index2">
+            <element name="u_kunde"/>
+        </index>
+    </element>
+</database>
