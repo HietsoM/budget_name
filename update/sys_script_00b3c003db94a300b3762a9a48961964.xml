@@ -33,6 +33,8 @@
 	var gr2 = new GlideAggregate('x_271170_budget_ma_einkauf');
 	gr2.addQuery('u_kunde.u_user', gs.getUserID());
 	gr2.addQuery('u_kategorie', current.getValue('u_kategorie'));
+	gr2.addQuery('u_datum','>=' ,gs.beginningOfThisMonth());
+	gr2.addQuery('u_datum','<=' ,gs.endOfThisMonth());
 	gr2.addAggregate('SUM', 'u_kosten');
 	gr2.groupBy('u_kategorie');
 	gr2.query();
@@ -76,7 +78,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>00b3c003db94a300b3762a9a48961964</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Ausgaben summieren pro Kat</sys_name>
         <sys_overrides/>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
@@ -84,7 +86,7 @@
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
         <sys_update_name>sys_script_00b3c003db94a300b3762a9a48961964</sys_update_name>
         <sys_updated_by>Frieder</sys_updated_by>
-        <sys_updated_on>2018-09-06 15:35:02</sys_updated_on>
+        <sys_updated_on>2018-09-06 18:27:12</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
