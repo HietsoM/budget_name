@@ -5,22 +5,22 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_271170_budget_ma_ausgaben_pro_kategorie</name>
+        <name>x_271170_budget_ma_kategorie</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
-        <sys_created_by>Frieder</sys_created_by>
-        <sys_created_on>2018-09-06 12:46:49</sys_created_on>
-        <sys_id>60d4b007db1423009b641fc7689619b1</sys_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-09-06 08:10:43</sys_created_on>
+        <sys_id>78ea8d07dbd42300e27e9fd2ca961999</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_271170_budget_ma_ausgaben_pro_kategorie</sys_name>
+        <sys_name>x_271170_budget_ma_kategorie</sys_name>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
-        <sys_update_name>ua_table_licensing_config_60d4b007db1423009b641fc7689619b1</sys_update_name>
-        <sys_updated_by>Frieder</sys_updated_by>
-        <sys_updated_on>2018-09-06 12:46:49</sys_updated_on>
+        <sys_update_name>ua_table_licensing_config_78ea8d07dbd42300e27e9fd2ca961999</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-09-06 08:10:43</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>

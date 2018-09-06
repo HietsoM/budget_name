@@ -47,16 +47,16 @@
 	var gt_einkauf = new GlideRecord('x_271170_budget_ma_einkauf');
 	gt_einkauf.addQuery('u_datum', '<=', month_end);
 	gt_einkauf.addQuery('u_datum', '>=', month_begin);
-	gt_einkauf.addQuery('u_kunde',current.getValue('u_kunde'));
+	gt_einkauf.addQuery('u_kunde',current.sys_id);
 	gt_einkauf.query();
 	
 	var balance = 0;
 	while(gt_einkauf.next()){
-		balance += parseFloat(gt_einkauf.getValue('u_kosten'));
+		balance += parseFloat(gt_einkauf.u_kosten);
 	}
 	
 	
-	balance = current.u_budget - balance;
+	balance = parseFloat(current.u_budget) - balance;
 	
 	current.setValue('u_balance',balance);
 
@@ -68,7 +68,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>16a6b7bedb902300e27e9fd2ca9619d4</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Änderung Budget</sys_name>
         <sys_overrides/>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
@@ -76,7 +76,7 @@
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
         <sys_update_name>sys_script_16a6b7bedb902300e27e9fd2ca9619d4</sys_update_name>
         <sys_updated_by>Maksim</sys_updated_by>
-        <sys_updated_on>2018-09-06 12:10:16</sys_updated_on>
+        <sys_updated_on>2018-09-06 17:58:30</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
