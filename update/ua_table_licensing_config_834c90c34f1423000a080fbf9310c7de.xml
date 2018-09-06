@@ -13,13 +13,13 @@
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-09-06 07:58:10</sys_created_on>
-        <sys_id>a2c69ccbdb94a300b3762a9a489619f2</sys_id>
+        <sys_id>834c90c34f1423000a080fbf9310c7de</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_271170_budget_ma_kunde</sys_name>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
-        <sys_update_name>ua_table_licensing_config_a2c69ccbdb94a300b3762a9a489619f2</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_834c90c34f1423000a080fbf9310c7de</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-09-06 07:58:10</sys_updated_on>
     </ua_table_licensing_config>

@@ -8,9 +8,11 @@
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
-	// Add your code here
-	return '';  // return the calculated value
-
+	var user = new GlideRecord('x_271170_budget_ma_kunde');
+	
+	user.get('u_user',gs.getUserID());
+	
+	return user.sys_id; 
 })(current);]]></calculation>
         <choice/>
         <choice_field/>
@@ -23,7 +25,7 @@
         <delete_roles/>
         <dependent/>
         <dependent_on_field/>
-        <display>false</display>
+        <display>true</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
         <dynamic_default_value/>
@@ -34,12 +36,12 @@
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Reference">reference</internal_type>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>32</max_length>
         <name>x_271170_budget_ma_zusatzeinkommen</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference display_value="" name="x_271170_budget_ma_kunde">x_271170_budget_ma_kunde</reference>
         <reference_cascade_rule/>
@@ -54,22 +56,22 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-09-06 08:18:38</sys_created_on>
-        <sys_id>82c69ccbdb94a300b3762a9a4896198a</sys_id>
+        <sys_id>f64c90c34f1423000a080fbf9310c782</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Kunde</sys_name>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
         <sys_update_name>sys_dictionary_x_271170_budget_ma_zusatzeinkommen_u_kunde</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2018-09-06 14:13:14</sys_updated_on>
+        <sys_updated_by>juri.rempel</sys_updated_by>
+        <sys_updated_on>2018-09-06 14:37:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
+        <use_dynamic_default>true</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
+        <virtual>true</virtual>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>

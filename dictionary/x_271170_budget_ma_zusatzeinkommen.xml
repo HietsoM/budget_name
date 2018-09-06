@@ -2,9 +2,10 @@
 <database>
     <element label="Zusatzeinkommen" max_length="40" name="x_271170_budget_ma_zusatzeinkommen" type="collection">
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="javascript:gs.now()" dynamic_default_value="fb7553e85f220100a9ad2572f2b477b4" label="Datum" max_length="40" name="u_datum" type="glide_date" use_dynamic_default="true"/>
         <element label="Geld" mandatory="true" max_length="20" name="u_geld" type="currency"/>
-        <element label="Kategorie" mandatory="true" max_length="32" name="u_kategorie" reference="x_271170_budget_ma_kategorie" type="reference"/>
-        <element label="Kunde" mandatory="true" max_length="32" name="u_kunde" reference="x_271170_budget_ma_kunde" type="reference"/>
+        <element label="Beschreibung" mandatory="true" max_length="32" name="u_kategorie" type="string_full_utf8"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;var user = new GlideRecord('x_271170_budget_ma_kunde');&#10;&#9;&#10;&#9;user.get('u_user',gs.getUserID());&#10;&#9;&#10;&#9;return user.sys_id; &#10;})(current);" display="true" label="Kunde" max_length="32" name="u_kunde" read_only="true" reference="x_271170_budget_ma_kunde" type="reference" use_dynamic_default="true" virtual="true"/>
         <index name="index">
             <element name="u_kategorie"/>
         </index>
