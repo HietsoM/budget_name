@@ -20,7 +20,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Ausgaben summieren pro Kat</name>
-        <order>100</order>
+        <order>200</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -29,7 +29,7 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	gs.addInfoMessage('Anfang');
+
 	var gr2 = new GlideAggregate('x_271170_budget_ma_einkauf');
 	gr2.addQuery('u_kunde.u_user', gs.getUserID());
 	gr2.addQuery('u_kategorie', current.getValue('u_kategorie'));
@@ -42,24 +42,33 @@
 	if(gr2.next()){
 		summe= gr2.getAggregate('SUM', 'u_kosten');
 		katID= gr2.getValue('u_kategorie');
-		gs.addInfoMessage('2.: ' + summe);
+
 		var kunde = new GlideRecord('x_271170_budget_ma_kunde');
 		kunde.get('u_kunde.u_user', gs.getUserID());
-		var budget= kunde.getValue('u_budget');
-		var percentage = (summe/budget)*100;
 
-		gs.addInfoMessage('3.: ' + gr2.getValue('u_kunde.sys_id'));
+		var budget= kunde.getValue('u_budget');
+		gs.addInfoMessage('1.: ' + budget +' & ' + summe);
+		var percentage = (parseFloat(summe)/parseFloat(budget))*100;
 
 		var gr = new GlideRecord('x_271170_budget_ma_ausgaben_pro_kategorie');
-		gr.initialize();
-		gr.setValue('u_kategorie', katID);
-		gr.setValue('u_summegeldkat', summe);
-		gr.setValue('u_prozentanteil', percentage);
-		gr.setValue('u_kunde', gr2.getValue('u_kunde'));
-		gr.insert();
+		gr.addQuery('u_kunde', kunde.sys_id);
+		gr.addQuery('u_kategorie', katID);
+		gr.query();
+		
+		if(gr.hasNext()){
+			gr.next();
+			gr.setValue('u_summegeldkat', summe);
+			gr.setValue('u_prozentanteil', percentage);
+			gr.update();
+		}else{
+			gr.initialize();
+			gr.setValue('u_kategorie', katID);
+			gr.setValue('u_summegeldkat', summe);
+			gr.setValue('u_prozentanteil', percentage);
+			gr.setValue('u_kunde', kunde.sys_id);
+			gr.insert();
+		}
 	}
-	
-	gs.addInfoMessage('Ende');
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>Frieder</sys_created_by>
@@ -67,7 +76,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>00b3c003db94a300b3762a9a48961964</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Ausgaben summieren pro Kat</sys_name>
         <sys_overrides/>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
@@ -75,7 +84,7 @@
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
         <sys_update_name>sys_script_00b3c003db94a300b3762a9a48961964</sys_update_name>
         <sys_updated_by>Frieder</sys_updated_by>
-        <sys_updated_on>2018-09-06 14:10:20</sys_updated_on>
+        <sys_updated_on>2018-09-06 15:35:02</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
