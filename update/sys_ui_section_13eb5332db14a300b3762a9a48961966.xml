@@ -4,28 +4,14 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>u_name</element>
             <position>0</position>
-            <sys_created_by>Frieder</sys_created_by>
-            <sys_created_on>2018-09-06 09:56:45</sys_created_on>
-            <sys_id>8a1c1f72db14a300b3762a9a4896193b</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_271170_budget_ma_kategorie" sys_domain="global" view="Default view">13eb5332db14a300b3762a9a48961966</sys_ui_section>
-            <sys_updated_by>Frieder</sys_updated_by>
-            <sys_updated_on>2018-09-06 09:56:45</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>u_kunde</element>
-            <position>1</position>
             <sys_created_by>Maksim</sys_created_by>
-            <sys_created_on>2018-09-06 11:43:04</sys_created_on>
-            <sys_id>ab64bb3edb902300e27e9fd2ca96196d</sys_id>
+            <sys_created_on>2018-09-06 11:49:19</sys_created_on>
+            <sys_id>47d5ff7edb902300e27e9fd2ca96193c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_271170_budget_ma_kategorie" sys_domain="global" view="Default view">13eb5332db14a300b3762a9a48961966</sys_ui_section>
             <sys_updated_by>Maksim</sys_updated_by>
-            <sys_updated_on>2018-09-06 11:43:04</sys_updated_on>
+            <sys_updated_on>2018-09-06 11:49:19</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
