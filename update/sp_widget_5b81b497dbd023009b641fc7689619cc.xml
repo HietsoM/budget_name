@@ -4,47 +4,45 @@
         <category>custom</category>
         <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
         <controller_as>c</controller_as>
-        <css>#budgetM{
-  padding-top: 50px;
-}</css>
+        <css/>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>true</has_preview>
-        <id>bm_balken_logo</id>
+        <has_preview>false</has_preview>
+        <id>bm_popup_zusatzeinkommen</id>
         <internal>false</internal>
         <link/>
-        <name>bm_balken_logo</name>
+        <name>BM Popup Zusatzeinkommen</name>
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+ 
+		 data.formWidget= {table: "x_271170_budget_ma_zusatzeinkommen", sys_id: "-1", hideRelatedLists: false};
+	
+	//----------------
+	//data.formWidget= {table: "x_271170_budget_ma_kunde", sys_id: data.currentUserID.toString(), hideRelatedLists: false};
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>Maksim</sys_created_by>
-        <sys_created_on>2018-09-07 10:51:27</sys_created_on>
-        <sys_id>593238dbdb902300e27e9fd2ca961981</sys_id>
-        <sys_mod_count>31</sys_mod_count>
-        <sys_name>bm_balken_logo</sys_name>
+        <sys_created_by>Thomas.Sommer</sys_created_by>
+        <sys_created_on>2018-09-07 10:48:35</sys_created_on>
+        <sys_id>5b81b497dbd023009b641fc7689619cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>BM Popup Zusatzeinkommen</sys_name>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
-        <sys_update_name>sp_widget_593238dbdb902300e27e9fd2ca961981</sys_update_name>
+        <sys_update_name>sp_widget_5b81b497dbd023009b641fc7689619cc</sys_update_name>
         <sys_updated_by>Thomas.Sommer</sys_updated_by>
-        <sys_updated_on>2018-09-07 11:36:26</sys_updated_on>
+        <sys_updated_on>2018-09-07 10:59:10</sys_updated_on>
         <template><![CDATA[<div>
-<!-- your widget template -->
-  
-  &nbsp
-  <img src="http://icons.iconarchive.com/icons/iconsmind/outline/128/Next-2-2-icon.png" alt="Nexxt-Logo">
-  
-  
-  
-  
-  <img src="https://i.imgur.com/jqtEk0n.png">
-  &nbsp<font size="10" id=budgetM> Budget Manager</font>
+	<widget id="widget-form" options='data.formWidget'></widget>
 </div>]]></template>
     </sp_widget>
 </record_update>

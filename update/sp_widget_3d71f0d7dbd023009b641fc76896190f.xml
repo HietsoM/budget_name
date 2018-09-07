@@ -14,8 +14,8 @@
 spModal.open({
  //spModal.open will open a modal, and we'll pass it the following parameters
  size: size,
- title: 'Neue Kategorie hinzufügen',
- widget: '44b5201fdb9023009b641fc7689619cc', //Insert sys_id of the embedded widget - "Pet Selection"
+ title: 'Neues Zusatzeinkommen hinzufügen',
+ widget: '5b81b497dbd023009b641fc7689619cc', //Insert sys_id of the embedded widget - "Pet Selection"
  buttons: [
  {label:'${close}', primary: true}
  ],
@@ -89,42 +89,55 @@ a.settings {
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
-        <id>bm_popup_kategorie_trigger</id>
+        <id>bm_popup_zusatzeinkommen_trigger</id>
         <internal>false</internal>
         <link/>
-        <name>BM Popup Kategorie Trigger</name>
+        <name>BM Popup Zusatzeinkommen Trigger</name>
         <option_schema/>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-/*
+
  var thisUser = new GlideRecord('x_271170_budget_ma_kunde');
  thisUser.get('u_user',gs.getUserID());
  thisUser.query();
  if(thisUser.next()) {
  data.currentUserID = thisUser.u_user;
-}*/
+}
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>Thomas.Sommer</sys_created_by>
-        <sys_created_on>2018-09-07 09:56:16</sys_created_on>
-        <sys_id>b4956cdbdb9023009b641fc7689619ef</sys_id>
-        <sys_mod_count>16</sys_mod_count>
-        <sys_name>BM Popup Kategorie Trigger</sys_name>
+        <sys_created_on>2018-09-07 10:48:13</sys_created_on>
+        <sys_id>3d71f0d7dbd023009b641fc76896190f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>BM Popup Zusatzeinkommen Trigger</sys_name>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
-        <sys_update_name>sp_widget_b4956cdbdb9023009b641fc7689619ef</sys_update_name>
+        <sys_update_name>sp_widget_3d71f0d7dbd023009b641fc76896190f</sys_update_name>
         <sys_updated_by>Thomas.Sommer</sys_updated_by>
-        <sys_updated_on>2018-09-07 12:00:53</sys_updated_on>
+        <sys_updated_on>2018-09-07 11:01:47</sys_updated_on>
         <template><![CDATA[<div ng-if="!data.currentPet">
  <button ng-click="c.onBrowsePets('lg')" class="adopt btn btn-primary">
- ${Kategorie<br>
+ ${Zusatzeinkommen<br>
    hinzufügen}
  </button>
 </div>
 
-]]></template>
+<!--House for the adopted pet to live in-->
+<div class="pet-house-outer-container" ng-if="data.currentPet">
+ <div class="pet-house-container">
+ <div class="pet" style="background: url('{{data.currentPet.photo}}') center center;background-size: cover;"></div>
+ <img class="pet-house" ng-src="pet-house.pngx" />
+ <div class="pet-name">
+ {{data.currentPet.name}}
+ </div>
+ <!--Link to browse pets-->
+ <a class="settings" href="javascript:void(0)" ng-click="c.onBrowsePets('lg')">
+ <i class="fa fa-cog"></i>
+ </a>
+ </div>
+</div>]]></template>
     </sp_widget>
 </record_update>

@@ -7,27 +7,27 @@
         <css/>
         <glyph/>
         <id/>
-        <order>1</order>
+        <order>3</order>
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">e86d1847dbd023009b641fc76896196c</sp_column>
-        <sp_widget display_value="DiagrammTest">2173a80bdbd023009b641fc7689619f1</sp_widget>
+        <sp_column display_value="3">8ed994c3dbd023009b641fc76896198e</sp_column>
+        <sp_widget display_value="BM Popup Zusatzeinkommen Trigger">3d71f0d7dbd023009b641fc76896190f</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>Thomas.Sommer</sys_created_by>
-        <sys_created_on>2018-09-06 15:12:37</sys_created_on>
-        <sys_id>0d64ec0bdbd023009b641fc768961947</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-07 10:56:32</sys_created_on>
+        <sys_id>bb53b41bdbd023009b641fc768961999</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
-        <sys_update_name>sp_instance_0d64ec0bdbd023009b641fc768961947</sys_update_name>
+        <sys_update_name>sp_instance_bb53b41bdbd023009b641fc768961999</sys_update_name>
         <sys_updated_by>Thomas.Sommer</sys_updated_by>
-        <sys_updated_on>2018-09-06 15:12:37</sys_updated_on>
+        <sys_updated_on>2018-09-07 11:14:32</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=0d64ec0bdbd023009b641fc768961947"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=bb53b41bdbd023009b641fc768961999"/>
 </record_update>
