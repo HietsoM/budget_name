@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>bm_balken_logo</id>
+        <internal>false</internal>
+        <link/>
+        <name>bm_balken_logo</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Maksim</sys_created_by>
+        <sys_created_on>2018-09-07 10:51:27</sys_created_on>
+        <sys_id>593238dbdb902300e27e9fd2ca961981</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>bm_balken_logo</sys_name>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sp_widget_593238dbdb902300e27e9fd2ca961981</sys_update_name>
+        <sys_updated_by>Maksim</sys_updated_by>
+        <sys_updated_on>2018-09-07 11:01:44</sys_updated_on>
+        <template><![CDATA[<div style="border: 2px black solid;">
+<!-- your widget template -->
+  <br>
+  &nbsp
+  <img src="http://icons.iconarchive.com/icons/iconsmind/outline/128/Next-2-2-icon.png" alt="Nexxt-Logo">
+  &nbsp<font size="10"> Budget Manager</font>
+  <br>
+  <br>
+</div>]]></template>
+    </sp_widget>
+</record_update>
