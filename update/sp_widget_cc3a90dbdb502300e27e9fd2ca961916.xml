@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	var canvas=document.getElementById("canvas");
+	var ctx=canvas.getContext("2d");
+
+	var budget = c.data.budget;
+	var def = c.data.budget - c.data.balance;
+	var balance = c.data.balance;
+	
+	var budget_anz = budget + ' €';
+	var balance_anz = balance + ' € übrig';
+	var rot = (budget-balance)/budget;
+	var gruen = (balance/budget);
+	
+var colors=['MediumSeaGreen','Tomato','DeepSkyBlue '];
+var values=[gruen,rot];
+var labels=['Balance'];
+
+	
+dmbChart(150,150,125,25,values,colors,labels,0);
+
+function dmbChart(cx,cy,radius,arcwidth,values,colors,labels,selectedValue){
+    var tot=0;
+    var accum=0;
+    var PI=Math.PI;
+    var PI2=PI*2;
+    var offset=-PI/2;
+    ctx.lineWidth=arcwidth;
+    for(var i=0;i<values.length;i++){tot+=values[i];}
+    for(var i=0;i<values.length;i++){
+        ctx.beginPath();
+        ctx.arc(cx,cy,radius,
+            offset+PI2*(accum/tot),
+            offset+PI2*((accum+values[i])/tot)
+        );
+        ctx.strokeStyle=colors[i];
+        ctx.stroke();
+        accum+=values[i];
+    }
+    var innerRadius=radius-arcwidth-3;
+    ctx.beginPath();
+    //ctx.arc(cx,cy,innerRadius,0,PI2);
+    //ctx.fillStyle=colors[2];
+    //ctx.fill();
+    ctx.textAlign='center';
+    ctx.textBaseline='bottom';
+    ctx.fillStyle='black';
+    ctx.font=(innerRadius/8)+'px verdana';
+    ctx.fillText(budget_anz,cx,cy+innerRadius*.3);
+    ctx.font=(innerRadius/4)+'px verdana';
+    ctx.fillText(balance_anz,cx,cy-innerRadius*-.125);
+}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>u_kreisdiagramm</id>
+        <internal>false</internal>
+        <link/>
+        <name>Kreisdiagramm</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  var gt_kunde = new GlideRecord('x_271170_budget_ma_kunde');
+	gt_kunde.get('u_user',gs.getUserID());
+	
+	data.budget = gt_kunde.getValue('u_budget');
+	data.balance = gt_kunde.getValue('u_balance');
+	
+
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Maksim</sys_created_by>
+        <sys_created_on>2018-09-07 09:06:31</sys_created_on>
+        <sys_id>cc3a90dbdb502300e27e9fd2ca961916</sys_id>
+        <sys_mod_count>93</sys_mod_count>
+        <sys_name>Kreisdiagramm</sys_name>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sp_widget_cc3a90dbdb502300e27e9fd2ca961916</sys_update_name>
+        <sys_updated_by>Maksim</sys_updated_by>
+        <sys_updated_on>2018-09-07 10:08:28</sys_updated_on>
+        <template><![CDATA[<div style="text-align:center">
+<!-- your widget template -->
+	<div>
+  <canvas id="canvas" width=325 height=325></canvas>
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
