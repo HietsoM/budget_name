@@ -5,7 +5,7 @@
         <element label="Kategorie" max_length="32" name="u_kategorie" reference="x_271170_budget_ma_kategorie" type="reference"/>
         <element label="Kunde" max_length="32" name="u_kunde" reference="x_271170_budget_ma_kunde" type="reference"/>
         <element label="Prozentanteil" max_length="40" name="u_prozentanteil" type="percent_complete"/>
-        <element label="SummeGeldKat" max_length="20" name="u_summegeldkat" type="currency"/>
+        <element label="Summe" max_length="20" name="u_summegeldkat" type="currency"/>
         <index name="index">
             <element name="u_kategorie"/>
         </index>
