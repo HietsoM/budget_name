@@ -49,7 +49,7 @@
 		kunde.get('u_kunde.u_user', gs.getUserID());
 
 		var budget= kunde.getValue('u_budget');
-		gs.addInfoMessage('1.: ' + budget +' & ' + summe);
+		//gs.addInfoMessage('1.: ' + budget +' & ' + summe);
 		var percentage = (parseFloat(summe)/parseFloat(budget))*100;
 
 		var gr = new GlideRecord('x_271170_budget_ma_ausgaben_pro_kategorie');
@@ -78,7 +78,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>00b3c003db94a300b3762a9a48961964</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Ausgaben summieren pro Kat</sys_name>
         <sys_overrides/>
         <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
@@ -86,7 +86,7 @@
         <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
         <sys_update_name>sys_script_00b3c003db94a300b3762a9a48961964</sys_update_name>
         <sys_updated_by>Frieder</sys_updated_by>
-        <sys_updated_on>2018-09-06 18:27:12</sys_updated_on>
+        <sys_updated_on>2018-09-07 07:57:01</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
