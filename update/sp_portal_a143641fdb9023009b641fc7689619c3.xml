@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <default>false</default>
+        <homepage display_value="bm_index">f4bc9b3edb1023009b641fc76896199b</homepage>
+        <icon/>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page/>
+        <logo/>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sqanda_knowledge_base/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>Thomas.Sommer</sys_created_by>
+        <sys_created_on>2018-09-07 09:46:57</sys_created_on>
+        <sys_id>a143641fdb9023009b641fc7689619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Budget Manager Portal</sys_name>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sp_portal_a143641fdb9023009b641fc7689619c3</sys_update_name>
+        <sys_updated_by>Thomas.Sommer</sys_updated_by>
+        <sys_updated_on>2018-09-07 09:46:57</sys_updated_on>
+        <theme/>
+        <title>Budget Manager Portal</title>
+        <url_suffix>BM</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=a143641fdb9023009b641fc7689619c3"/>
+</record_update>

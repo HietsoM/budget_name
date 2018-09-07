@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function (spModal) { 
+ //Including spModal service
+ var c = this;
+ var shared = {}; //This is an empty array we can add to and share with the modal and embedded widget.
+ c.onBrowsePets = function(size){
+ //This function is called by a button in the HTML
+ 
+ shared.currentPet = c.data.currentPet; //We store the currentPet data as an object in 'shared' so that it is available to the embedded widget.
+
+spModal.open({
+ //spModal.open will open a modal, and we'll pass it the following parameters
+ size: size,
+ title: 'Neue Ausgabe hinzufügen',
+ widget: '44b5201fdb9023009b641fc7689619cc', //Insert sys_id of the embedded widget - "Pet Selection"
+ buttons: [
+ {label:'${close}', primary: true}
+ ],
+ shared: shared //We make the 'shared' array available to modal's embedded widget
+ }).then(function() {
+ //This function is triggered by submitting/closing the modal.
+ c.data.selectedPet = shared.selectedPet; //The selected pet is shared with this widget via the 'share' object
+ c.server.update(); //Send the updated data object to the server script
+ });
+}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>img.pet-house,
+div.pet,
+div.pet-name,
+a.settings {
+ position: absolute;
+}
+button.adopt {
+ position: relative;
+ padding: 10px 20px;
+ margin-bottom: 20px;
+ font-size: 1.5em;
+ width: 100%;
+}
+div.pet-house-outer-container {
+ position: relative;
+ height: 220px;
+}
+div.pet-house-container {
+ position: relative;
+ width: 200px;
+ text-align: center;
+ z-index: 9;
+ margin: 0 auto;
+}
+div.pet {
+ height: 100px;
+ width: 100px;
+ top: 99px;
+ left: 50px;
+ background-size: cover;
+}
+img.pet-house {
+ height: 200px;
+ right: 0;
+ z-index: 999;
+}
+div.pet-name {
+ width: 100%;
+ top: 65px;
+ color: #fff;
+ text-shadow: #414141 1px 1px;
+ -webkit-transform: rotate(355deg);
+ -moz-transform: rotate(355deg);
+ -o-transform: rotate(355deg);
+ -ms-transform: rotate(355deg);
+ transform: rotate(355deg);
+ z-index: 9999;
+}
+a.settings {
+ top: 10px;
+ right: 30px;
+ color: #7B542B;
+ font-size: 1.5em;
+ z-index: 99999;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>bm_popup_kategorie_trigger</id>
+        <internal>false</internal>
+        <link/>
+        <name>BM Popup Kategorie Trigger</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+ var thisUser = new GlideRecord('x_271170_budget_ma_kunde');
+ thisUser.get('u_user',gs.getUserID());
+ thisUser.query();
+ if(thisUser.next()) {
+ data.currentUserID = thisUser.u_user;
+}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Thomas.Sommer</sys_created_by>
+        <sys_created_on>2018-09-07 09:56:16</sys_created_on>
+        <sys_id>b4956cdbdb9023009b641fc7689619ef</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>BM Popup Kategorie Trigger</sys_name>
+        <sys_package display_value="Budget Manager" source="x_271170_budget_ma">859e3a72db102300e27e9fd2ca9619d8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Budget Manager">859e3a72db102300e27e9fd2ca9619d8</sys_scope>
+        <sys_update_name>sp_widget_b4956cdbdb9023009b641fc7689619ef</sys_update_name>
+        <sys_updated_by>Thomas.Sommer</sys_updated_by>
+        <sys_updated_on>2018-09-07 10:11:31</sys_updated_on>
+        <template><![CDATA[<div ng-if="!data.currentPet">
+ <button ng-click="c.onBrowsePets('lg')" class="adopt btn btn-primary">
+ ${Kategorie}
+ </button>
+</div>
+
+<!--House for the adopted pet to live in-->
+<div class="pet-house-outer-container" ng-if="data.currentPet">
+ <div class="pet-house-container">
+ <div class="pet" style="background: url('{{data.currentPet.photo}}') center center;background-size: cover;"></div>
+ <img class="pet-house" ng-src="pet-house.pngx" />
+ <div class="pet-name">
+ {{data.currentPet.name}}
+ </div>
+ <!--Link to browse pets-->
+ <a class="settings" href="javascript:void(0)" ng-click="c.onBrowsePets('lg')">
+ <i class="fa fa-cog"></i>
+ </a>
+ </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
